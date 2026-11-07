@@ -9,7 +9,7 @@ def ask_number(prompt, number_type=float):
 
 def main():
     receipt = Receipt("ShopWithUs")
-    print("Enter items. Please Enter on an empty name when done.\n")
+    print("Enter items. Press Enter on an empty name when done.\n")
 
     while True:
         name = input("Item name: ").strip()
@@ -30,6 +30,8 @@ def main():
 
     print()
     receipt.print_slip(cash)
+    filename = receipt.save(cash)
+    print(f"\nSaved to {filename}")
 
 if __name__ == "__main__":
     main()
